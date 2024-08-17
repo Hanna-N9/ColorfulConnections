@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "colorName": "blue",
+        "colorValue": "",
+        "associateWithColor": "ocean"
+    },
+    {
+        "id": 2,
+        "colorName": "green",
+        "colorValue": "",
+        "associateWithColor": "apple"
+
+    }
+]
