@@ -3,40 +3,40 @@
         "id": 1,
         "colorName": "blue",
         "colorValue": "#0000FF",
-        "associateWithColor": "ocean"
+        "associateWithColor": "Ocean"
     },
     {
         "id": 2,
         "colorName": "green",
         "colorValue": "#008000",
-        "associateWithColor": "apple"
+        "associateWithColor": "Green Apple"
 
     },
     {
         "id": 3,
         "colorName": "black",
         "colorValue": "#000000",
-        "associateWithColor": "crow"
+        "associateWithColor": "Crow"
     },
     {
         "id": 4,
         "colorName": "yellow",
         "colorValue": "#FFFF00",
-        "associateWithColor": "lemon"
+        "associateWithColor": "Lemon"
         
     },
     {
         "id": 5,
         "colorName": "purple",
         "colorValue": "#A020F0",
-        "associateWithColor": "lavender"
+        "associateWithColor": "Lavender"
         
     },
     {
         "id": 6,
         "colorName": "red",
         "colorValue": "#FF0000",
-        "associateWithColor": "fire truck"
+        "associateWithColor": "Fire Truck"
         
     }
 
