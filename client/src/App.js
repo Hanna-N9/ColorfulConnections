@@ -15,7 +15,7 @@ export default function App() {
       <h1>Colerful Connections in Progress</h1>
 
       {data.map(item => (
-        <div key={item.id}>{item.name}</div>
+        <div key={item.id}>{item.colorName}</div>
       ))}
     </div>
   );
