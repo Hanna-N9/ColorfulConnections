@@ -5,16 +5,18 @@ export default function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("...")
+    fetch("http://localhost:3001/colorOptions")
       .then(res => res.json())
-      .then(setData());
+      .then(data => setData(data));
   }, []);
 
-  <div>
-    <h1>Colerful Connections in Progress</h1>
+  return (
+    <div>
+      <h1>Colerful Connections in Progress</h1>
 
-    {data.map(item => (
-      <div key={item.id}>{item.colorName}</div>
-    ))}
-  </div>;
+      {data.map(item => (
+        <div key={item.id}>{item.name}</div>
+      ))}
+    </div>
+  );
 }
