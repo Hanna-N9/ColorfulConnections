@@ -2,20 +2,24 @@ import "./App.css";
 import { useState, useEffect } from "react";
 
 export default function App() {
-  const [data, setData] = useState([]);
+  const [color, setColor] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3001/colorOptions")
       .then(res => res.json())
-      .then(data => setData(data));
-  }, []);
+      .then(color => setColor(color));
+  });
 
   return (
-    <div>
+    <div className="App">
       <h1>Colerful Connections in Progress</h1>
 
-      {data.map(item => (
-        <div key={item.id}>{item.colorName}</div>
+      {color.map(col => (
+        <ul key={col.id}>
+          <li>{col.colorName}</li>
+          <li>{col.colorValue}</li>
+          <li>{col.associateWithColor}</li>
+        </ul>
       ))}
     </div>
   );
