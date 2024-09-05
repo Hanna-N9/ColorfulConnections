@@ -21,7 +21,7 @@ export default function App() {
 
     const data = { name, colorCode, something };
 
-    // A POST to add data
+    // A POST method to add data
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" }, // we want to get the response data in that format
