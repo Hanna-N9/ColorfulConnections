@@ -2,10 +2,11 @@ import "./App.css";
 import { useState, useEffect } from "react";
 
 export default function App() {
+  const URL = "http://localhost:3001/colorOptions";
   const [color, setColor] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/colorOptions")
+    fetch(URL)
       .then(res => res.json())
       .then(color => setColor(color));
   });
