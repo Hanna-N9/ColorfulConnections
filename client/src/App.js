@@ -6,8 +6,9 @@ export default function App() {
 
   const [color, setColor] = useState([]);
   const [name, setName] = useState("");
-  const [colorCode, setcolorCode] = useState("");
-  const [something, setSomething] = useState("");
+  const [colorCode, setColorCode] = useState("");
+  const [associatedColor, setAssociatedColor] = useState("");
+  const [submittedData, setSubmittedData] = useState(null);
 
   //A GET request to get all data
   useEffect(() => {
@@ -19,7 +20,7 @@ export default function App() {
   const handleSubmit = e => {
     e.preventDefault(); // prevent browser from reloading and get the data on time
 
-    const data = { name, colorCode, something };
+    const data = { name, colorCode, associatedColor };
 
     // A POST method to add data
     const requestOptions = {
@@ -30,7 +31,10 @@ export default function App() {
 
     fetch(URL, requestOptions)
       .then(response => response.json())
-      .then(res => console.log(res)); // response is shown on the console window
+      .then(res => {
+        setSubmittedData(res);
+        console.log(res); // Log to console for debugging
+      });
   };
 
   return (
@@ -44,6 +48,37 @@ export default function App() {
           <li>{col.associateWithColor}</li>
         </ul>
       ))}
+
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          value={name}
+          onChange={e => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Enter Color Code"
+          value={colorCode}
+          onChange={e => setColorCode(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Enter Associated Color"
+          value={associatedColor}
+          onChange={e => setAssociatedColor(e.target.value)}
+        />
+        <button type="submit">Submit</button>
+      </form>
+
+      {submittedData && (
+        <div>
+          <h2>Submitted Data</h2>
+          <p>Name: {submittedData.name}</p>
+          <p>Color Code: {submittedData.colorCode}</p>
+          <p>Associated Color: {submittedData.associatedColor}</p>
+        </div>
+      )}
     </div>
   );
 }
