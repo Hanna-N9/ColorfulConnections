@@ -15,26 +15,23 @@ export default function App() {
     fetch(URL)
       .then(res => res.json())
       .then(color => setColor(color));
-  });
+  }, []);
 
   const handleSubmit = e => {
-    e.preventDefault(); // prevent browser from reloading and get the data on time
+    e.preventDefault();
 
     const data = { name, colorCode, associatedColor };
 
-    // A POST method to add data
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" }, // we want to get the response data in that format
       body: JSON.stringify(data), // defines the body data that we want to send to the server -- convert to JSON
     };
 
+    // A POST method to add data
     fetch(URL, requestOptions)
-      .then(response => response.json())
-      .then(res => {
-        setSubmittedData(res);
-        console.log(res); // Log to console for debugging
-      });
+      .then(res => res.json())
+      .then(setSubmittedData(data));
   };
 
   return (
