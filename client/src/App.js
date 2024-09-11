@@ -24,8 +24,8 @@ export default function App() {
 
     const requestOptions = {
       method: "POST",
-      headers: { "Content-Type": "application/json" }, // we want to get the response data in that format
-      body: JSON.stringify(data), // defines the body data that we want to send to the server -- convert to JSON
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
     };
 
     // A POST method to add data
