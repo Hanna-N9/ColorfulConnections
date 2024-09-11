@@ -32,6 +32,10 @@ export default function App() {
     fetch(URL, requestOptions)
       .then(res => res.json())
       .then(setSubmittedData(data));
+    // Reset input fields
+    setName("");
+    setColorCode("");
+    setAssociatedColor("");
   };
 
   return (
